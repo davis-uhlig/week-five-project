@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="errors">
+      {{#errors}}
+      <p>{{.}}</p>
+      {{/errors}}
+    </div>
+    <div class="word">
+      {{#underscore}}
+      <div class="letters">
+        <p class="letter">{{.}}</p>
+      </div>
+      {{/underscore}}
+    </div>
+    <form action="/" method="post">
+      <input id="guess" type="text" name="userGuess" placeholder="Your Guess">
+      <!-- <button type="submit" name="button" onclick="onClick()">Make A Guess</button> -->
+      <input type="submit" name="button" value="Make Guess">
+      <script type="text/javascript" src="main.js"></script>
+    </form>
+    <!-- <h3>Correct Letters</h3>
+    <div class="correctGuessContainer">
+
+      {{#correct}}
+      <div class="correctGuesses">
+        <p id="rightLetter">{{.}},</p>
+      </div>
+      {{/correct}}
+
+    </div> -->
+    <h3>Letters Guessed</h3>
+    <div class="lettersGuessedContainer">
+
+      {{#allLetters}}
+      <div class="lettersGuessed">
+        <p id="totalLetters">{{.}},</p>
+      </div>
+      {{/allLetters}}
+    </div>
+    <div class="guessesLeft">
+      <p>Guesses Left: {{guesses}}</p>
+    </div>
+    <script type="text/javascript" src="main.js">
+
+    </script>
+  </body>
+</html>

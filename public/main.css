@@ -1,0 +1,31 @@
+.word {
+  display: flex;
+}
+
+.letters {
+  margin-right: 2%;
+  /*border-bottom: 1px solid black;*/
+  /*margin-bottom: 3%;*/
+  width: 20px;
+}
+
+.hidden {
+  /*visibility: hidden;*/
+  margin-bottom: 0px;
+}
+
+.correctGuessContainer {
+  display: flex;
+}
+
+.lettersGuessedContainer {
+  display: flex;
+}
+
+#rightLetter {
+  margin-right: 10px;
+}
+
+#totalLetters {
+  margin-right: 10px;
+}
