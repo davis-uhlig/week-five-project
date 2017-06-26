@@ -15,6 +15,8 @@ let underscores = [];
 
 const app = express();
 
+// const indexRouter = require("./routes/indexRoute");
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.engine("mustache", mustacheExpress());
@@ -31,6 +33,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+// app.use("/", indexRouter);
 
 let messages = [];
 let correctLetters = [];
@@ -59,6 +63,7 @@ app.post("/", function(req, res){
   messages = [];
   req.checkBody("userGuess", "Please Guess A Letter").notEmpty();
   req.checkBody("userGuess", "Only One Letter At A Time!!").isLength({max: 1});
+  req.checkBody("userGuess", "Guess a Letter Not A Number").isAlpha();
 
   let errors = req.validationErrors();
 
@@ -78,8 +83,6 @@ app.post("/", function(req, res){
       match = true;
 
     }
-
-
   }
 
   for (var i = 0; i < lettersGuessed.length; i++) {
