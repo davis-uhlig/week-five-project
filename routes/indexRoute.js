@@ -64,8 +64,8 @@
 //   }
 //
 //   if (guessesLeft === 0) {
-//     res.redirect("/gameover");
-//   }
+//     res.render("gameover", {words: word});
+//   } else {
 //
 //   for (var i = 0; i < underscores.length; i++) {
 //     let underscore = underscores[i];
@@ -75,6 +75,7 @@
 //     res.redirect("/")
 //     }
 //   }
+// }
 // });
 //
 // module.exports = router;

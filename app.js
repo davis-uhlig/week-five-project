@@ -16,6 +16,7 @@ let underscores = [];
 const app = express();
 
 // const indexRouter = require("./routes/indexRoute");
+// const gameoverRouter = require("./routes/gameoverRoute");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -34,7 +35,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// app.use("/gameover", gameoverRouter);
 // app.use("/", indexRouter);
+
 
 let messages = [];
 let correctLetters = [];
